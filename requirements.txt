@@ -5,7 +5,6 @@ matplotlib
 cartopy
 Pillow
 requests
-gradio
 boto3
 geopandas
 scipy
