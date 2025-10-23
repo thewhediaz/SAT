@@ -1,0 +1,11 @@
+numpy
+imageio>=2.25.1
+netCDF4
+matplotlib
+cartopy
+Pillow
+requests
+gradio
+boto3
+geopandas
+scipy
