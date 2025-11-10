@@ -178,7 +178,7 @@ files = downloader.list_files(
 )
 
 # Filter the resulting list, get the last twelve files, at most
-files = files[-18:]
+files = files[-1:]
 
 # Download the datasets within the filtered range
 downloader.get_files(file_paths=files)
@@ -395,3 +395,4 @@ if delta_seconds < 0:
 # Activar autorefresh
 st_autorefresh(interval=delta_seconds*1000, key="autorefresh")
 st.write(f"Página se refrescará en {delta_seconds} segundos")
+
