@@ -30,7 +30,7 @@ LAT_CEN = 18   # para Acapulco
 lon_cen, lat_cen = -99.91, 16.85
 
 # Definir rango en grados para cubrir la región
-lon_min, lon_max = lon_cen - 3, lon_cen + 4
+lon_min, lon_max = lon_cen - 3, lon_cen + 3
 lat_min, lat_max = lat_cen - 3, lat_cen + 3
 
 # Set the extent of the ROI (longitude and latitude field of view in degrees)
@@ -329,5 +329,6 @@ for file in MEDIA_PATH.glob("*"):
     if file.suffix in [".png"] and file not in last_18_png:
         file.unlink()
         print(f"Eliminado: {file.name}")
+
 
 
