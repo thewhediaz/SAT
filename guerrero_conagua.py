@@ -86,7 +86,7 @@ import datetime
 now_utc = datetime.datetime.now(datetime.timezone.utc)
 
 # 2. Create a timedelta object to represent 2 hours 10 minutes
-two_hours_delta = datetime.timedelta(minutes=10)
+two_hours_delta = datetime.timedelta(minutes=20)
 
 # 3. Subtract 2 hours from the current UTC time
 past_time_utc = now_utc - two_hours_delta
@@ -329,3 +329,4 @@ for file in MEDIA_PATH.glob("*"):
     if file.suffix in [".png"] and file not in last_18_png:
         file.unlink()
         print(f"Eliminado: {file.name}")
+
