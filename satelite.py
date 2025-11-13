@@ -351,49 +351,11 @@ last_18_png = all_png[-18:]
 
 # Archivos a eliminar: todos los PNG que no estén en last_18_png + todos los GIF
 for file in MEDIA_PATH.glob("*"):
-    if file.suffix in [".png", ".gif"] and file not in last_18_png:
+    if file.suffix in [".png"] and file not in last_18_png:
         file.unlink()
         print(f"Eliminado: {file.name}")
 
-# Obtener todos los PNG en orden
-png_files = sorted(MEDIA_PATH.glob("*.png"))[-18:]  # Últimas 18 imágenes
 
-# Crear el GIF con loop infinito
-images = [imageio.imread(png) for png in png_files]
-imageio.mimsave(ANIMATION_PATH, images, fps=6, loop=0)  # loop=0 → infinito
 
-# Abrir el GIF en el navegador
-#webbrowser.open(f"file://{os.path.abspath(ANIMATION_PATH)}")
-# Mostrar en Streamlit
-import streamlit as st
-
-st.image(str(ANIMATION_PATH), caption=" ")
-
-from datetime import datetime, timedelta
-from streamlit_autorefresh import st_autorefresh
-
-# Minutos objetivo
-target_minutes = [2, 12, 22, 32, 42, 52]
-
-now = datetime.now()
-minute = now.minute
-second = now.second
-
-# Buscar el próximo minuto objetivo
-for m in target_minutes:
-    if m > minute or (m == minute and second == 0):
-        next_target = m
-        break
-else:
-    next_target = target_minutes[0]  # siguiente hora
-
-# Calcular segundos hasta el próximo refresh
-delta_seconds = (next_target - minute) * 60 - second
-if delta_seconds < 0:
-    delta_seconds += 3600  # pasar a la siguiente hora si es necesario
-
-# Activar autorefresh
-st_autorefresh(interval=delta_seconds*1000, key="autorefresh")
-st.write(f"Página se refrescará en {delta_seconds} segundos")
 
 
