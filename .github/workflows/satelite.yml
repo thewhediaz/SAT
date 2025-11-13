@@ -3,7 +3,10 @@ name: Ejecutar satelite.py cada 10 minutos
 on:
   schedule:
     - cron: "2,12,22,32,42,52 * * * *"  # Ejecutar cada 10 min
-  workflow_dispatch:  # También podrás ejecutarlo manualmente
+  workflow_dispatch:  
+
+permissions:
+  contents: write 
 
 jobs:
   run-satelite:
