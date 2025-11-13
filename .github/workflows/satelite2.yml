@@ -25,7 +25,7 @@ jobs:
           pip install -r requirements.txt || true
 
       - name: Ejecutar script principal
-        run: python guerrero_conagua.py.py
+        run: python guerrero_conagua.py
 
       - name: Subir imágenes generadas
         run: |
