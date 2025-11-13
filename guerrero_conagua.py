@@ -21,7 +21,7 @@ CHANNEL = "C13"
 #     "F": "Full Disk",
 #     "C": "CONUS (Contiguous United States)".
 #    "M1": "Mesoscale", n = 1 or 2.
-SCENE = "F"
+SCENE = "C"
 
 # Set the central longitude and latitude for the region of interest (ROI)
 LON_CEN = -99.91  # para Acapulco
@@ -30,8 +30,8 @@ LAT_CEN = 18   # para Acapulco
 lon_cen, lat_cen = -99.91, 16.85
 
 # Definir rango en grados para cubrir la región
-lon_min, lon_max = lon_cen - 5, lon_cen + 5
-lat_min, lat_max = lat_cen - 5, lat_cen + 5
+lon_min, lon_max = lon_cen - 3, lon_cen + 4
+lat_min, lat_max = lat_cen - 3, lat_cen + 3
 
 # Set the extent of the ROI (longitude and latitude field of view in degrees)
 ROI_EXTENT = (11, 11)
@@ -86,7 +86,7 @@ import datetime
 now_utc = datetime.datetime.now(datetime.timezone.utc)
 
 # 2. Create a timedelta object to represent 2 hours 10 minutes
-two_hours_delta = datetime.timedelta(minutes=20)
+two_hours_delta = datetime.timedelta(minutes=10)
 
 # 3. Subtract 2 hours from the current UTC time
 past_time_utc = now_utc - two_hours_delta
@@ -329,4 +329,5 @@ for file in MEDIA_PATH.glob("*"):
     if file.suffix in [".png"] and file not in last_18_png:
         file.unlink()
         print(f"Eliminado: {file.name}")
+
 
