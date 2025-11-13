@@ -1,12 +1,10 @@
-name: Ejecutar satelite.py cada 10 minutos
+name: Ejecutar satelite.py manualmente o por disparo externo
 
 on:
-  schedule:
-    - cron: "2,12,22,32,42,52 * * * *"  # Ejecutar cada 10 min
-  workflow_dispatch:  
+  workflow_dispatch:  # Permite ejecución manual o vía API (desde cron-job.org)
 
 permissions:
-  contents: write 
+  contents: write
 
 jobs:
   run-satelite:
@@ -26,7 +24,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt || true
 
-      - name: Ejecutar script
+      - name: Ejecutar script principal
         run: python satelite.py
 
       - name: Subir imágenes generadas
