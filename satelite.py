@@ -106,7 +106,7 @@ import datetime
 now_utc = datetime.datetime.now(datetime.timezone.utc)
 
 # 2. Create a timedelta object to represent 2 hours 10 minutes
-two_hours_delta = datetime.timedelta(hours=3, minutes=10)
+two_hours_delta = datetime.timedelta(minutes=20)
 
 # 3. Subtract 2 hours from the current UTC time
 past_time_utc = now_utc - two_hours_delta
@@ -395,4 +395,5 @@ if delta_seconds < 0:
 # Activar autorefresh
 st_autorefresh(interval=delta_seconds*1000, key="autorefresh")
 st.write(f"Página se refrescará en {delta_seconds} segundos")
+
 
