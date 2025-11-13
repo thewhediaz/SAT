@@ -25,7 +25,7 @@ SCENE = "C"
 
 # Set the central longitude and latitude for the region of interest (ROI)
 LON_CEN = -99.91  # para Acapulco
-LAT_CEN = 18   # para Acapulco
+LAT_CEN = 18.5   # para Acapulco
 # Coordenadas de Acapulco
 lon_cen, lat_cen = -99.91, 16.85
 
@@ -329,6 +329,7 @@ for file in MEDIA_PATH.glob("*"):
     if file.suffix in [".png"] and file not in last_18_png:
         file.unlink()
         print(f"Eliminado: {file.name}")
+
 
 
 
