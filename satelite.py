@@ -312,8 +312,8 @@ for i, dataset_path in enumerate(dataset_paths):
     # Create the plot parameters
     param = GSPlotParameter((title_left, title_right), (x_label, y_label), cb_label)
     param.fig_dpi = 300  # Aumenta la resolución
-    param.fig_width_px = 1400  # Aumenta la resolución
-    param.fig_height_px = 1400  # Aumenta la resolución
+    param.fig_width_px = 1408 # Aumenta la resolución
+    param.fig_height_px = 1408  # Aumenta la resolución
 
 
     # Save the media file (ensure the destination path does exist)
@@ -354,6 +354,7 @@ for file in MEDIA_PATH.glob("*"):
     if file.suffix in [".png"] and file not in last_18_png:
         file.unlink()
         print(f"Eliminado: {file.name}")
+
 
 
 
