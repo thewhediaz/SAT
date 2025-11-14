@@ -8,3 +8,5 @@ requests
 boto3
 geopandas
 scipy
+imageio-ffmpeg
+
