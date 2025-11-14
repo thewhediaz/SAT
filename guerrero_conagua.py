@@ -332,6 +332,37 @@ for file in MEDIA_PATH.glob("*"):
 
 
 
+# ======================================================
+# === GENERAR GIF Y MP4 DE LAS ÚLTIMAS 38 IMÁGENES =====
+# ======================================================
+
+import imageio.v2 as imageio
+
+# Las últimas imágenes ya quedaron en la lista last_18_png
+png_paths = last_18_png
+
+# Cargar imágenes
+frames = [imageio.imread(p) for p in png_paths]
+
+# --- GIF: fps=5, loop infinito ---
+gif_path = MEDIA_PATH / "animacion.gif"
+imageio.mimsave(
+    gif_path,
+    frames,
+    format="GIF",
+    fps=5,
+    loop=0
+)
+
+# --- MP4: fps=4 ---
+mp4_path = MEDIA_PATH / "animacion.mp4"
+imageio.mimsave(
+    mp4_path,
+    frames,
+    format="FFMPEG",
+    fps=4
+)
+
 
 
 
